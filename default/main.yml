@@ -1,0 +1,20 @@
+---
+
+# Allowed settings are: installed, latest
+ufw_pkg_state: installed
+
+# Enable service on boot
+ufw_service_enabled: yes
+
+# Allowed settings are: started, stopped
+ufw_service_state: started
+
+# Allowed settings are: enabled, disabled
+ufw_state: enabled
+
+# Enable logging
+ufw_logging: "on" #off
+
+# list of profiles located in /etc/ufw/applications.d
+ufw_applications: []
+

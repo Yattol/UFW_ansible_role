@@ -1,0 +1,17 @@
+---
+
+- name: "Install ufw"
+   apt: pkg=ufw state=present
+
+- name: Apply ufw defaults
+   template: src="ufw.j2" dest=/etc/default/ufw
+
+- name: Set firewall rules for SSH
+   ufw: rule=allow port=ssh protocol=tcp
+
+- name: Copy configuration template for /ufw/sysctl.conf
+   template: src="sysctl.conf.j2" dest=/etc/ufw/sysctl.conf 
+   notify: reload ufw
+
+
+...
